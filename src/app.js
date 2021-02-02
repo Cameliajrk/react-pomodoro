@@ -49,7 +49,7 @@ function App() {
             // decrement timeLeft by one every second (1000ms)
             const newIntervalId = setInterval(() => {
                 setTimeLeft(prevTimeLeft => prevTimeLeft - 1);
-            }, 100);
+            }, 1000);
             setIntervalId(newIntervalId);
         }
     };
@@ -117,7 +117,7 @@ function App() {
                     id={"start"}
                     className={"btn_start"}
                     onClick={handleStartStopClick}>
-                    {"Start"}
+                    {isStarted ? "Stop" : "Start"}
                 </button>
             </div>
         </div>
