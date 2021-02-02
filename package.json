@@ -19,6 +19,9 @@
   "homepage": "https://github.com/Cameliajrk/react-pomodoro#readme",
   "dependencies": {
     "@babel/preset-react": "^7.12.10",
+    "mo": "^1.7.3",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
@@ -32,7 +35,8 @@
     "eslint-plugin-unicorn": "^27.0.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.3",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "sass": "^1.32.5"
   },
   "lint-staged": {
     "*.json": [
