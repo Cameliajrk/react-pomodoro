@@ -49,7 +49,7 @@ function App() {
             // decrement timeLeft by one every second (1000ms)
             const newIntervalId = setInterval(() => {
                 setTimeLeft(prevTimeLeft => prevTimeLeft - 1);
-            }, 1000);
+            }, 100);
             setIntervalId(newIntervalId);
         }
     };
@@ -71,36 +71,55 @@ function App() {
 
     return (
         <div className={"App"}>
-            <Break
-                breakLength={breakLength}
-                decrementBreakLengthByOneMinute={
-                    decrementBreakLengthByOneMinute
-                }
-                incrementBreakLengthByOneMinute={
-                    incrementBreakLengthByOneMinute
-                }
-            />
-            <TimeLeft
-                handleStartStopClick={handleStartStopClick}
-                timerLabel={currentSessionType}
-                startStopButtonLabel={isStarted ? "Stop" : "Start"}
-                timeLeft={timeLeft}
-            />
-            <Session
-                sessionLength={sessionLength}
-                decrementSessionLengthByOneMinute={
-                    decrementSessionLengthByOneMinute
-                }
-                incrementSessionLengthByOneMinute={
-                    incrementSessionLengthByOneMinute
-                }
-            />
-            <button
-                type={"button"}
-                id={"reset"}
-                onClick={handleResetButtonClick}>
-                {"Reset"}
-            </button>
+            <h1>{"Pomodoro"}</h1>
+            <div className={"boxTimerAndSessionAndBreak"}>
+                <div className={"selector"}>
+                    <Break
+                        breakLength={breakLength}
+                        decrementBreakLengthByOneMinute={
+                            decrementBreakLengthByOneMinute
+                        }
+                        incrementBreakLengthByOneMinute={
+                            incrementBreakLengthByOneMinute
+                        }
+                    />
+                </div>
+                <div className={"timer"}>
+                    <TimeLeft
+                        handleStartStopClick={handleStartStopClick}
+                        timerLabel={currentSessionType}
+                        startStopButtonLabel={isStarted ? "Stop" : "Start"}
+                        timeLeft={timeLeft}
+                    />
+                </div>
+                <div className={"selector"}>
+                    <Session
+                        sessionLength={sessionLength}
+                        decrementSessionLengthByOneMinute={
+                            decrementSessionLengthByOneMinute
+                        }
+                        incrementSessionLengthByOneMinute={
+                            incrementSessionLengthByOneMinute
+                        }
+                    />
+                </div>
+            </div>
+            <div className={"btnResetAndStart"}>
+                <button
+                    type={"button"}
+                    id={"reset"}
+                    className={"btn_reset"}
+                    onClick={handleResetButtonClick}>
+                    {"Reset"}
+                </button>
+                <button
+                    type={"button"}
+                    id={"start"}
+                    className={"btn_start"}
+                    onClick={handleStartStopClick}>
+                    {"Start"}
+                </button>
+            </div>
         </div>
     );
 }

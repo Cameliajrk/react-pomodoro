@@ -10,11 +10,13 @@ const Break = ({
     const breakLengthInMinutes = moment.duration(breakLength, 's').minutes();
 
     return (
-        <div>
-           <p id="break-label">Break</p> 
-           <p id="break-length">{breakLengthInMinutes}</p> 
-           <button id="break-decrement" onClick = {decrementBreakLengthByOneMinute}>-</button>
-           <button id="break-increment" onClick = {incrementBreakLengthByOneMinute}>+</button>
+        <div className={"btnSessionBreak"}>
+            <button className={"btn_increment"} id="break-decrement" onClick = {decrementBreakLengthByOneMinute}>-</button>
+            <div className={"SessionAndBreakTime"}>
+                <p id="break-label">Break</p> 
+                <p id="break-length">{breakLengthInMinutes}</p> 
+            </div>
+            <button className={"btn_increment"} id="break-increment" onClick = {incrementBreakLengthByOneMinute}>+</button>
         </div>
     );
 }
